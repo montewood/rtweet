@@ -211,7 +211,9 @@ stream_tweets <- function(q = "",
       ctr <- ctr + 1
       if (ctr == 1 && verbose) message(
         "The stream disconnected prematurely. Reconnecting...")
+        break
       if (ctr == 2 && verbose) message("Reconnecting again...")
+        break
       if (ctr == 5) break
     } else if (verbose) {
       message("Finished streaming tweets!")
